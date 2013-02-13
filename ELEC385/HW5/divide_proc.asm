@@ -16,7 +16,7 @@
     ;                                        AND XXXXXCODE ADDRESS HEREXXXXXX.
     ;  
     ;
-    ; *lines that have been commented out are only used for testing purposes.
+    ; *lines that have been commented out can be uncommented to view and verify quotient and remainder.
 
                 .org  XXXXX MEMORY ADDRESS HEREXXXXXX  ;* REPLACE XXXXXMEMORY ADDRESS HEREXXXXXX 
                                                        ;  with your target memory address
