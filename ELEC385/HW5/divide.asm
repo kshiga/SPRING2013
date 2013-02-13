@@ -9,7 +9,10 @@
     ; r5: pointer data
     ; r6: branch condition/calculation of (dividend - divisor))
     ;
+    ; NOTE: To Run, XXXXXADDRESS HEREXXXXXX must be replaced with a valid address.
+    ;
     ; tests have been commented out
+    ; 
 
 
           
