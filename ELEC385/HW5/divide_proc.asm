@@ -12,6 +12,9 @@
     ; 
     ; NOTE: To Run, XXXXXMEMORY ADDRESS HEREXXXXXX  must be replaced with a valid memory address.
     ;          and  XXXXXCODE ADDRESS HEREXXXXXX    must be replaced with a valid address.
+    ;       Also replace DIVIDEND  with decimal value DIVIDEND
+    ;                and DIVISOR   with decimal value DIVIDEND
+    ;
     ;       ** DO NOT SET THE SAME VALUE TO BOTH XXXXXMEMORY ADDRESS HEREXXXXXX 
     ;                                        AND XXXXXCODE ADDRESS HEREXXXXXX.
     ;  
