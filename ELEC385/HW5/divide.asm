@@ -7,11 +7,15 @@
     ; r3: divisor
     ; r4: branch destination address
     ; r5: pointer data
-    ; r6: branch condition/calculation of (divisor - divisor))
+    ; r6: branch condition/calculation of (dividend - divisor))
+    ;
+    ; tests have been commented out
+
+
           
-          .org 0xF0
-          .dc  45
-          .dc  5
+          ;.org 0xF0    ; test
+          ;.dc  45    ; test
+          ;.dc  5    ; test
 
           .org  0xA000
           la    r1, 0        ; r1: quotient
@@ -29,4 +33,7 @@
                             ; and incrementing the quotient to greater than what it should be 
           st    r1, 8(r5)     ; stores quotient in F8
           st    r2, 12(r5)    ; stores remainder in FC
+
+          ;ldr    r20, 0xF8    ; test to see stored quotient
+          ;ldr    r21, 0xFC    ; test to see stored remainder
           stop
