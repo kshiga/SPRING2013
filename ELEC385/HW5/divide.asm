@@ -17,8 +17,8 @@
 
           
           ;.org 0xF0    ; test
-          ;.dc  45    ; test
-          ;.dc  5    ; test
+          ;.dc  45      ; test
+          ;.dc  5       ; test
 
            .org  0xA000
  
