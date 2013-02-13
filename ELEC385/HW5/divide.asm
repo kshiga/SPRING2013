@@ -8,11 +8,14 @@
     ; r4: branch destination address
     ; r5: pointer data
     ; r6: branch condition/calculation of (dividend - divisor))
-    ;
-    ; NOTE: To Run, XXXXXADDRESS HEREXXXXXX must be replaced with a valid address.
-    ;
-    ; tests have been commented out
     ; 
+    ; NOTE: To Run, XXXXXMEMORY ADDRESS HEREXXXXXX  must be replaced with a valid memory address.
+    ;          and  XXXXXCODE ADDRESS HEREXXXXXX    must be replaced with a valid address.
+    ;       ** DO NOT SET THE SAME VALUE TO BOTH XXXXXMEMORY ADDRESS HEREXXXXXX 
+    ;                                        AND XXXXXCODE ADDRESS HEREXXXXXX.
+    ;  
+    ;
+    ; *lines that have been commented out can be uncommented to view and verify quotient and remainder.
 
 
           
@@ -20,10 +23,12 @@
           ;.dc  45      ; test
           ;.dc  5       ; test
 
-           .org  0xA000
+           .org  XXXXXCODE ADDRESS HEREXXXXXX         ;* REPLACE XXXXXCODE ADDRESS HEREXXXXXX 
+                                                      ;  with your target address for the code
  
            la    r1, 0        ; r1: quotient
-           la    r5, XXXXXADDRESS HEREXXXXXX   ; r5: pointer data
+           la    r5, XXXXXMEMORY ADDRESS HEREXXXXXX   ;* REPLACE XXXXXMEMORY ADDRESS HEREXXXXXX 
+                                                      ;  with your target memory address
            ld    r2, 0(r5)     ; r2: dividend/remainder 
            ld    r3, 4(r5)     ; r3: divisor
            lar   r4, loop      ; r4: branch destination address
@@ -41,4 +46,4 @@
            ;ldr    r20, 0xF8    ; test to see stored quotient
            ;ldr    r21, 0xFC    ; test to see stored remainder
            
-           stop
+           stop                 ; stops program
