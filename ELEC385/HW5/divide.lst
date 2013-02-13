@@ -1,0 +1,32 @@
+(SRCTools Version 3.1.1)
+ HexLoc     DecLoc    MachWord   Label        Instruction                Comment
+                                                                         ; Homework 5
+                                                                         ; Kaitlyn Higa
+                                                                         ;
+                                                                         ; r1: quotient
+                                                                         ; r2: dividend/remainder
+                                                                         ; r3: divisor
+                                                                         ; r4: branch destination address
+                                                                         ; r5: pointer data
+                                                                         ; r6: calculation of 2 * divisor
+                                                                         ; r7: branch condition/calculation of (divisor - (2 * divisor))
+                                                                         
+00000000  0000000000  28400000                la r1, 0                   ; r1: quotient
+00000004  0000000004  2940a000                la r5, 0xA000              ; r5: pointer data
+00000008  0000000008  088a0000                ld r2, 0(r5)               ; r2: dividend/remainder 
+0000000c  0000000012  08ca0004                ld r3, 4(r5)               ; r3: divisor
+00000010  0000000016  31000004                lar r4, loop               ; r4: branch destination address
+00000014  0000000020  61863000                add r6, r3, r3             ; calculates 2(divisor)
+                                                                         
+00000018  0000000024  70843000  loop:         sub r2, r2, r3             ; subtracts divisor from dividend and stores in r2
+0000001c  0000000028  68420001                addi r1, r1, 1             ; increments quotient
+00000020  0000000032  71845000                sub r6, r2, r5             ; calculates (most-current) dividend - 2(divisor)
+00000024  0000000036  40087004                brpl r4, r7                ; if (most-current) dividend - 2(divisor) is greater than or equal to zero, we loop.
+                                                                         ; this means that there the dividend has at least one instance of the divisor in
+                                                                         ; it, thus, we can run through the loop again without getting a negative remainder
+                                                                         ; and incrementing the quotient to greater than what it should be 
+00000028  0000000040  184a0008                st r1, 8(r5)               ; stores quotient in A008
+0000002c  0000000044  188a000c                st r2, 12(r5)              ; stores remainder in A00C
+
+--- Symbol Table ---
+loop: 24
