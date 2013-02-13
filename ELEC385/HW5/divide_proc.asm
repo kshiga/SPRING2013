@@ -12,7 +12,7 @@
     ; 
     ; NOTE: To Run, XXXXXADDRESS HEREXXXXXX must be replaced with a valid address.
     ;
-    ; *lines that have been commented out are only used for esting purposes
+    ; *lines that have been commented out are only used for testing purposes
 
                 .org  XXXXXADDRESS HEREXXXXXX  ;* REPLACE XXXXXADDRESS HEREXXXXXX with your target address
     dividend:   .dc  45 
