@@ -10,18 +10,23 @@
     ; r6: branch condition/calculation of dividend - divisor
     ; r7: stored program counter (returned address from subroutine)
     ; 
-    ; NOTE: To Run, XXXXXADDRESS HEREXXXXXX must be replaced with a valid address.
+    ; NOTE: To Run, XXXXXMEMORY ADDRESS HEREXXXXXX  must be replaced with a valid memory address.
+    ;       and     XXXXXCODE ADDRESS HEREXXXXXX    must be replaced with a valid address.
+    ;       ** DO NOT SET THE SAME VALUE TO BOTH XXXXXMEMORY ADDRESS HEREXXXXXX 
+    ;                                        AND XXXXXCODE ADDRESS HEREXXXXXX.
+    ;  
     ;
     ; *lines that have been commented out are only used for testing purposes
 
-                .org  XXXXXADDRESS HEREXXXXXX  ;* REPLACE XXXXXADDRESS HEREXXXXXX with your target address
+                .org  XXXXX MEMORY ADDRESS HEREXXXXXX  ;* REPLACE XXXXXMEMORY ADDRESS HEREXXXXXX 
+                                                       ;  with your target address
     dividend:   .dc  45 
     divisor:    .dc  5
     quotient:   .dc  0
     remainder:  .dc  0
 
-                .org 0xA000
-
+                .org XXXXXCODE ADDRESS HEREXXXXXX      ;* REPLACE XXXXXCODE ADDRESS HEREXXXXXX 
+                                                       ;  with your target address
                 ldr  r2, dividend    ; r2: dividend
                 ldr  r3, divisor     ; r3: divisor
                 lar  r5, proc        ; r5: points to procedure
